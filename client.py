@@ -23,7 +23,7 @@ def main():
     print("--> list     (List files)")
     print("--> info     (System info)")
     print("--> cd       (Change directory. Add the directory like args)")
-    print("--> trasfer  (Upload & Download files)")
+    print("--> transfer  (Upload & Download files)")
     print("--> delete   (Delete a file)")
     print("--> screenshot   (Take a screenshot)")
     print("--> shell    (Execute a shell command)")
