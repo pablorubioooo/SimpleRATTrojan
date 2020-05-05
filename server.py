@@ -20,12 +20,10 @@ port = 45451
 max_conections = 5
 array = []
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+sistema = platform.system()
 
 def admin(socket_client):
 
-    sistema = platform.system()
-    print("ESto es un ",sistema)
     request = socket_client.recv(1024).decode()
     response = ''
     array = request.split(" ")
