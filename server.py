@@ -85,7 +85,7 @@ def admin(socket_client):
             print("[*] Archivo enviado.")
         else:
             response = "[*] Server --> El archivo no existe."
-            socket_client.send('fail')
+            socket_client.send(('fail').encode())  
             print("[-] El archivo no existe.")
 
     elif 'close' in array[0]:
