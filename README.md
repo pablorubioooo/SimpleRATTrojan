@@ -6,20 +6,20 @@ RAT Client by Pablo Rubio
 *************************
 [*] Comandos disponibles
 *************************
---> list     (List files)
+--> list        (List files)
 
---> info     (System info)
+--> info        (System info)
 
---> cd       (Change directory. Add the directory like args)
+--> cd          (Change directory. Add the directory like args)
 
---> transfer  (Upload & Download files)
+--> transfer    (Upload & Download files)
 
---> delete   (Delete a file)
+--> delete      (Delete a file)
 
---> screenshot   (Take a screenshot)
+--> screenshot  (Take a screenshot)
 
---> shell    (Execute a shell command)
+--> shell       (Execute a shell command)
 
---> close    (Close conection)
+--> close       (Close conection)
 
 *************************
