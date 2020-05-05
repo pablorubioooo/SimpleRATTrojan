@@ -126,8 +126,6 @@ def admin(socket_client):
                 print(response)
                 if os.path.isfile("a1.png"):
                     os.remove("a1.png")
-                elif os.path.isdir("a1.png"):
-                    os.rmdir("a1.png")
 
         else:
             response = "fail"
