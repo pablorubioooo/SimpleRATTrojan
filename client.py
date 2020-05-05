@@ -69,20 +69,24 @@ def main():
 
             if 'u' in orden:
                 archivo = input("[*] Ruta del archivo a subir: ")
-                client.send(('up'+' '+archivo).encode())
-                response = client.recv(1024).decode()
-                if 'go' in response:
-                    print('[*] Sending...')
-                    f = open(archivo, 'rb')
-                    l = f.read(1024)
-                    while (l):
-                        client.send(l)
+                if os.path.isfile(archivo):
+                    client.send(('up'+' '+archivo).encode())
+                    response = client.recv(1024).decode()
+                    if 'go' in response:
+                        print('[*] Sending...')
+                        f = open(archivo, 'rb')
                         l = f.read(1024)
-                    f.close()
-                    client.send(('fin_archivo').encode())
-                    print("[*] Archivo enviado.")
+                        while (l):
+                            client.send(l)
+                            l = f.read(1024)
+                        f.close()
+                        client.send(('fin_archivo').encode())
+                        print("[*] Archivo enviado.")
+                    else:
+                        print("[-] Error al enviar datos.")
+                        continue
                 else:
-                    print("[-] Error al enviar datos.")
+                    print("[-] Error al enviar datos, el archivo no existe.")
                     continue
 
             elif 'd' in orden:
