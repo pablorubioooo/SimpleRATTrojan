@@ -12,7 +12,7 @@ RAT Client by Pablo Rubio
 
 --> cd       (Change directory. Add the directory like args)
 
---> trasfer  (Upload & Download files)
+--> transfer  (Upload & Download files)
 
 --> delete   (Delete a file)
 
