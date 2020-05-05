@@ -8,7 +8,7 @@ from socket import error
 import os
 
 server = "127.0.0.1"
-port = 45454
+port = 45451
 array = []
 
 
@@ -140,8 +140,14 @@ def main():
             input("[-] Comando no disponible. Pulse cualquier tecla para continuar.")
             continue
 
-        response = client.recv(1024)
-        print (response)
+        response = client.recv(1024).decode('ascii')
+        response = response.replace("b'",'')
+        response = response.replace("'"," ")
+        response = response.replace("\\n"," ")
+        responses = response.split('/*/*')
+
+        for i in range(len(responses)):
+            print (responses[i])
     
     #fin while
     client.close()

