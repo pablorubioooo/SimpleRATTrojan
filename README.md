@@ -2,7 +2,7 @@
 Linux Simple RAT Python3 Trojan
 
 ****************************************************************
-* [*] Comandos disponibles                                     *
+* [*] Comandos disponibles                                     
 ****************************************************************
 
 --> list         (List files)
