@@ -140,7 +140,7 @@ def main():
             input("[-] Comando no disponible. Pulse cualquier tecla para continuar.")
             continue
 
-        response = client.recv(1024).decode('ascii')
+        response = client.recv(4096).decode()
         response = response.replace("b'",'')
         response = response.replace("'"," ")
         response = response.replace("\\n"," ")
