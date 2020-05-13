@@ -22,3 +22,6 @@ Linux Simple RAT Python3 Trojan
 --> close        (Close conection)
 
 ****************************************************************
+
+
+**This is a direct connection trojan. (Server to victim & Client for you, Hacker).
